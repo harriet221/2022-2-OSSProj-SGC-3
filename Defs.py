@@ -343,7 +343,7 @@ class Speed(enum.Enum):
     blind = 5
     bomb = 20
     mode = 3
-    meteor = 20
+    meteor = 16
 
 
 class Utilization(enum.Enum):
