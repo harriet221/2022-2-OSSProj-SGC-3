@@ -189,9 +189,9 @@ class Content(enum.Enum):
     giveok_msgtitle = 'Give Coin'
     have_msg = 'This item has already been purchased'
     have_msgtitle = 'Already have'
-    buy_msg='Purchase completed'
-    buy_msgtitle='Buy item'
-    cannotBuy_msg="Item cannot be purchased due to insufficient coins"
+    buy_msg = 'Purchase completed'
+    buy_msgtitle = 'Buy item'
+    cannotBuy_msg = "Item cannot be purchased due to insufficient coins"
 
     # BUY page
     items = ["bullets", "missile", "missile2", "dagger"]
@@ -347,10 +347,9 @@ class Speed(enum.Enum):
 
 
 class Utilization(enum.Enum):
-    x = 0
-    y = 1
-    zero = 0
-    one = 1
+    x = 0   # rect(Tuple)'s x
+    y = 1   # rect(Tuple)'s y
+    edge = 0  # screen's edge
 
 
 class BackGround(enum.Enum):
