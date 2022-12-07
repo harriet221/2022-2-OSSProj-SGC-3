@@ -2,7 +2,10 @@ import enum
 
 
 class Sounds(enum.Enum):
+    # game volume
     volume_small = 0.3
+
+    # sounds
     bgm = 'resource/sound/8BitSuperAudioArcade_AllenGrey.wav'
     star = 'resource/sound/MagicTower.wav'
     gameover = 'resource/sound/Fail.wav'
@@ -16,10 +19,8 @@ class Sounds(enum.Enum):
 
 
 class Images(enum.Enum):
+    # main background
     background = 'resource/image/background.jpg'
-    logo = 'resource/image/logo-silver.png'
-    key_left = 'resource/image/arrowkey_left.png'
-    key_right = 'resource/image/arrowkey_right.png'
 
     # game background
     bg_space = 'resource/image/bg_space.png'
@@ -30,6 +31,13 @@ class Images(enum.Enum):
     bg_desert = 'resource/image/bg_desert.png'
     bg_planet = 'resource/image/bg_planet.png'
     bg_world = 'resource/image/bg_world.png'
+
+    # game logo
+    logo = 'resource/image/logo-silver.png'
+    
+    # HELP page 키 설명
+    key_left = 'resource/image/arrowkey_left.png'
+    key_right = 'resource/image/arrowkey_right.png'
 
     # game character
     shoot = 'resource/image/shoot.png'
@@ -51,41 +59,47 @@ class Images(enum.Enum):
     star6 = 'resource/image/star6.png'
     star7 = 'resource/image/star7.png'
 
-    # chess
+    # 차원별 enemies
+    ## chess
     black_knight = 'resource/image/chess_black_knight.png'
     white_king = 'resource/image/chess_white_king.png'
-    # green
+
+    ## green
     bat = 'resource/image/green_bat.png'
     lizard = 'resource/image/green_lizard.png'
-    # pirate
+
+    ## pirate
     pirate_ship = 'resource/image/pirate_ship.png'
     kraken = 'resource/image/pirate_kraken.png'
-    # card
+
+    ## card
     card_jack = 'resource/image/card_jack.png'
     card_queen = 'resource/image/card_queen.png'
-    # desert
+
+    ## desert
     snake = 'resource/image/desert_snake.png'
     desert_scolpion = 'resource/image/desert_scolpion.png'
 
-    # meteor
+    ## meteor
     meteor = 'resource/image/meteorite.png'
 
-    # weapon
+    # weapons
     bullets_256 = 'resource/image/bullets_256px.png'
     missile_256 = 'resource/image/missile_256px.png'
     missile2_256 = 'resource/image/missile2_256px.png'
     bomb_256 = 'resource/image/bomb_256px.png'
 
-    # blind mode
+    # modes
+    ## blind mode
     blind = 'resource/image/blind_mode.png'
 
-    # bomb mode
+    ## bomb mode
     bomb = 'resource/image/bomb.png'
 
-    # mirror mode
+    ## mirror mode
     mirror = 'resource/image/mirror_mode.png'
 
-    # double mode
+    ## double mode
     double = 'resource/image/double.png'
 
 
@@ -93,11 +107,11 @@ class Content(enum.Enum):
     # main
     main = '__main__'
 
-    # caption
+    # captions
     gamename = 'Next Dimension'
     gameplay = 'Game Play'
 
-    # game weapons
+    # game weapon mode
     basic = 'basic'
 
     # button name
@@ -119,10 +133,10 @@ class Content(enum.Enum):
     buy_btn = "Buy"
     apply_btn = 'Apply'
 
-    # rank page
+    # RANK page table title
     rank_rowname = ["RANK", "Email", "SCORE"]
 
-    # help page
+    # HELP page
     help_title = 'Story & Game Rule'
     story = 'In 2300 AD, you can no longer live on Earth\n'\
         'and received a mission to find a new dimension for live.\n'\
@@ -135,7 +149,7 @@ class Content(enum.Enum):
     hptable_row1 = '  Attack 1 time to kill'
     hptable_row2 = '  Attack 2 time to kill'
 
-    # about page
+    # ABOUT page
     about_title = 'License & Source'
     license = 'License'
     license_detail = 'The GPL(3.0) License'
@@ -149,7 +163,7 @@ class Content(enum.Enum):
         'Seojeong Yun, Gaeun Lee, Seyeon Park'
     github = 'Click here to go to our github link'
 
-    # sign in or up page
+    # SIGNIN or SIGNUP page
     pwref = '* Please set the password to at least 8 digits'
     signupmsg = 'Successfully signed up!'
     signup = 'Success'
@@ -164,13 +178,13 @@ class Content(enum.Enum):
     pw = 'password'
     confirm_pw_input = "conFirm password : "
 
-    # store page
+    # STORE page
     store_title = 'Store'
     category1 = 'Weapons'
     applied_item = "Current Applied item"
     coin = "You Current coin"
     item_category = 'Weapons'
-    gift_info = "Enter the email of the friend you want to give"
+    gift_info = "Enter an email to gift coins"
     giveok_msg = 'Coin gift is complete'
     giveok_msgtitle = 'Give Coin'
     have_msg = 'This item has already been purchased'
@@ -179,7 +193,7 @@ class Content(enum.Enum):
     buy_msgtitle = 'Buy item'
     cannotBuy_msg = "Item cannot be purchased due to insufficient coins"
 
-    # buy page
+    # BUY page
     items = ["bullets", "missile", "missile2", "dagger"]
     img_path = 'resource/image/'
     img_have = '_check.png'
@@ -187,23 +201,24 @@ class Content(enum.Enum):
     img_size256 = '_256px.png'
     img_size16 = '_16px.png'
 
-    # apply page
+    # APPLY page
     reload = "reload"
 
-    # gift page
+    # GIFT page
     coin_input = "coin : "
 
-    # game end page
+    # GAME END page
     end = 'Game End'
 
     # none
     none = ''
 
-    # table id
+    # RANK page
     tb_rank = "rank"
 
 
 class Item(enum.Enum):
+    # 아이템 가격 coin
     coin_10k = 10000
     coin_50k = 50000
     coin_100k = 100000
@@ -224,14 +239,16 @@ class Color(enum.Enum):
 
 
 class Display(enum.Enum):
+    # screen size
     w_init = 1/3
     h_init = 8/9
     angle = 0
 
+    # 스크린 최소, 최대값
     minscreen_x = 400
     minscreen_y = 600
 
-    # game screen
+    # game screen 사이즈 조절
     width_divide3 = 3
     width_divide2 = 2
 
