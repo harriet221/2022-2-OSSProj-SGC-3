@@ -170,7 +170,7 @@ class Content(enum.Enum):
     applied_item = "Current Applied item"
     coin = "You Current coin"
     item_category = 'Weapons'
-    gift_info = "Enter the email of the friend you want to give"
+    gift_info = "Enter an email to gift coins"
     giveok_msg = 'Coin gift is complete'
     giveok_msgtitle = 'Give Coin'
     have_msg = 'This item has already been purchased'
