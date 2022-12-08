@@ -8,11 +8,12 @@ from Defs import *
 
 pygame.mixer.init()
 
+# window screen 초기 설정
 pygame.init()
 infoObject = pygame.display.Info()
 size = [int(infoObject.current_w),int(infoObject.current_h)]
 screen = pygame.display.set_mode(size,pygame.RESIZABLE)
-pygame.display.set_caption(Content.main.value) # 캡션
+pygame.display.set_caption(Content.main.value)
 
 # 창이 resize되었는지 여부 체크
 def on_resize() -> None:
@@ -21,10 +22,6 @@ def on_resize() -> None:
     menu.resize(new_w, new_h)
     print(f'New menu size: {menu.get_size()}') # check
 
-# hidden 페이지 나타나기
-def hidden():
-    menu.clear()
-    menu.add.button('OK',game_end)
 
 # 스코어, 랭킹, restart, main 페이지 연결
 score = mainGame.total_score
@@ -69,7 +66,7 @@ mytheme.title_bar_style=pygame_menu.widgets.MENUBAR_STYLE_NONE
 menu = pygame_menu.Menu('', size[Utilization.x.value], size[Utilization.y.value], theme=mytheme)
 
 
-hidden()
+game_end()
 menu.enable()
 on_resize() # Set initial size
 while True:
