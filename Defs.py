@@ -159,7 +159,7 @@ class Content(enum.Enum):
     basecode1 = 'Kill-Console/PythonShootGame(The GPL License)'
     basecode2 = 'CSID-DGU/2021-2-OSSProj-PlusAlpha-9(The MIT License)'
     imagesource = 'pixabay'
-    soundesource = 'soundeffectplus'
+    soundesource = 'envato elements'
     creators = '\nCreated by\n'\
         'Dongguk University OSSProj\n'\
         'Seojeong Yun, Gaeun Lee, Seyeon Park'
