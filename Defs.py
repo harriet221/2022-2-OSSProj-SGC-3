@@ -182,16 +182,17 @@ class Content(enum.Enum):
     store_title = 'Store'
     category1 = 'Weapons'
     applied_item = "Current Applied item"
-    coin = "You Current coin"
+    coin = "Your Current coin"
     item_category = 'Weapons'
     gift_info = "Enter an email to gift coins"
     giveok_msg = 'Coin gift is complete'
     giveok_msgtitle = 'Give Coin'
     have_msg = 'This item has already been purchased'
     have_msgtitle = 'Already have'
-    buy_msg = 'Purchase completed'
-    buy_msgtitle = 'Buy item'
-    cannotBuy_msg = "Item cannot be purchased due to insufficient coins"
+    buy_msg='Purchase completed'
+    buy_msgtitle='Buy item'
+    cannotBuy_msg="Item cannot be purchased due to insufficient coins"
+    cannotBuy_msgtitle="Unable to purchase"
 
     # BUY page
     items = ["bullets", "missile", "missile2", "dagger"]

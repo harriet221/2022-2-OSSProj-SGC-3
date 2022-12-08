@@ -9,6 +9,7 @@ from Defs import *
 pygame.mixer.init()
 
 
+
 # Sounds
 bgmsound = pygame.mixer.Sound(Sounds.bgm.value)
 
@@ -50,7 +51,7 @@ def sound(sound):
 def sign_up_button(email, password, conFirmPassword):
     registerReturn = register.register(
         email.get_value(), password.get_value(), conFirmPassword.get_value())
-    if registerReturn == 1:
+    if registerReturn == 1: # 회원가입 성공시, 성공 메시지 출력
         print(pg.alert(text=Content.signupmsg.value, title=Content.signup.value))
     else:
         print(pg.alert(text=Content.errormsg.value, title=Content.error.value))
@@ -112,8 +113,7 @@ def show_signinup():
     menu.add.button(Content.signup_btn.value, sign_up)
     menu.add.button(Content.quit_btn.value, pygame_menu.events.EXIT)
 
-
-## 로그인 후 보여지는 메뉴 페이지
+# 로그인 후 보여지는 메뉴 화면
 def show_mode():
     menu.clear()
     menu.add.image(Images.logo.value,
@@ -125,6 +125,7 @@ def show_mode():
     menu.add.button(Content.about_btn.value, about)
     menu.add.toggle_switch(Content.sound_btn.value, False, sound)
     menu.add.button(Content.quit_btn.value, pygame_menu.events.EXIT)
+
 
 
 ## RANK 페이지
@@ -141,12 +142,12 @@ def rank():
 
     # 랭킹 테이블에 나타내기
     for rank in rank_list:
-        rank[2]=format(rank[2],',')
+        rank[2]=format(rank[2],',') # 큰 숫자는 ,로 구분
         table.add_row(rank,cell_font_size=Display.description_fontsize.value)
 
     # 테이블 Display
     menu.add.vertical_margin(Display.small_margin.value)
-    menu.add.button(Content.back_btn.value, show_mode)
+    menu.add.button(Content.back_btn.value, show_mode) # 뒤로가기 버튼
 
 
 ## HELP 페이지: STORY & GAME RULE
@@ -223,20 +224,19 @@ def about():
 ## SIGN UP(회원가입) 페이지
 def sign_up():
     menu.clear()
-    email = menu.add.text_input(Content.email_input.value, id=Content.email.value)
-    password = menu.add.text_input(Content.pw_input.value, password=True, id=Content.pw.value)
+    email = menu.add.text_input(Content.email_input.value, id=Content.email.value) # 이메일 입력
+    password = menu.add.text_input(Content.pw_input.value, password=True, id=Content.pw.value) # 비밀번호 입력
     menu.add.label(Content.pwref.value, font_size=Display.reference_fontsize.value)
-    conFirmPassword = menu.add.text_input(Content.confirm_pw_input.value, password=True, id=Content.pw.value)
-    menu.add.button(Content.submit_btn.value, sign_up_button, email, password, conFirmPassword)
+    conFirmPassword = menu.add.text_input(Content.confirm_pw_input.value, password=True, id=Content.pw.value) # 비밀번호 재입력
+    menu.add.button(Content.submit_btn.value, sign_up_button, email, password, conFirmPassword) # 제출버튼
     menu.add.button(Content.back_btn.value, show_signinup)
-
 
 ## SIGN IN: SIGN비밀번호 재설정 페이지
 def resetPassword():
     menu.clear()
     email = menu.add.text_input(Content.email_input.value, id=Content.email.value)
     menu.add.button(Content.submit_btn.value, resetPassword_Button, email)
-    menu.add.button(Content.signin_btn.value, login)
+    menu.add.button(Content.signin_btn.value, login) # 로그인 페이지로 이동
     menu.add.button(Content.back_btn.value, show_signinup)
 
 
@@ -255,11 +255,11 @@ def login():
 def store():
     menu.clear()
     menu.add.label(Content.store_title.value, font_size=Display.title_fontsize.value, padding=Display.padding_large.value)  # page title
-    menu.add.button(Content.buyitem_btn.value,Buy_page)
-    menu.add.button(Content.applyitem_btn.value,apply_item_page)
-    menu.add.button(Content.givecoin_btn.value,give_coin_page)
+    menu.add.button(Content.buyitem_btn.value,Buy_page) # 아이템 구매페이지로 이동
+    menu.add.button(Content.applyitem_btn.value,apply_item_page) # 아이템 적용 페이지로 이동
+    menu.add.button(Content.givecoin_btn.value,give_coin_page) # 코인 선물 페이지
     menu.add.vertical_margin(Display.small_margin.value)
-    menu.add.button(Content.back_btn.value, show_mode)
+    menu.add.button(Content.back_btn.value, show_mode) # 뒤로가기 버튼
 
 
 ## STORE: BUY 페이지
@@ -270,14 +270,14 @@ def Buy_page():
     menu.add.label(dataLoad.coin_get(register.user))
     menu.add.label(Content.item_category.value)
     item_list= Content.items.value
-    buy_list = dataLoad.item_buyList_get(register.user)
-    for item in item_list:
-        if item in buy_list:
+    buy_list = dataLoad.item_buyList_get(register.user) # 사용자가 구매한 아이템 리스트 가져옴
+    for item in item_list: 
+        if item in buy_list: # 구매한 아이템일 경우, 흑색 이미지 사용 및 구매 버튼 비활성화
             image_path=Content.img_path.value + item + Content.img_have.value
             menu.add.image(image_path,
                         angle=Display.angle.value, scale=Display.medium_scale.value)
             menu.add.button(Content.buy_btn.value, Buy_check)
-        else:
+        else: # 구매하지 않은 아이템일 경우, 컬러 이미지 사용 및 구매 버튼 활성화
             weapon_image_path=Content.img_path.value+item+Content.img_size256.value
             price_image_path=Content.img_path.value+item+Content.img_price.value
             menu.add.image(weapon_image_path,
@@ -287,7 +287,7 @@ def Buy_page():
             menu.add.button(Content.buy_btn.value, Buy, register.user,item)
 
     menu.add.vertical_margin(Display.small_margin.value)
-    menu.add.button(Content.back_btn.value, store)
+    menu.add.button(Content.back_btn.value, store) # 뒤로가기 버튼
 
 
 ## STORE: APPLY 페이지
@@ -320,16 +320,15 @@ def apply_item_page():
 def give_coin_page():
     menu.clear()
     menu.add.label(Content.gift_info.value)
-    friend_email = menu.add.text_input(Content.email_input.value)
-    coin = menu.add.text_input(Content.coin_input.value)
-    menu.add.button(Content.submit_btn.value,giveButton,friend_email,coin)
+    friend_email = menu.add.text_input(Content.email_input.value) # 친구 이메일 입력
+    coin = menu.add.text_input(Content.coin_input.value) # 선물하고자 하는 코인량 입력
+    menu.add.button(Content.submit_btn.value,giveButton,friend_email,coin) # 입력값 제출 버튼
 
     menu.add.vertical_margin(Display.small_margin.value)
-    menu.add.button(Content.back_btn.value, store)
+    menu.add.button(Content.back_btn.value, store) # 뒤로가기 버튼
 
 
 # PYGAME MENU #####
-
 menu_image = pygame_menu.baseimage.BaseImage(
     image_path=Images.background.value, drawing_mode=pygame_menu.baseimage.IMAGE_MODE_REPEAT_XY)
 mytheme = pygame_menu.themes.THEME_GREEN.copy()
