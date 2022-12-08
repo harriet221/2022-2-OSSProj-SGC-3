@@ -132,8 +132,9 @@ The GPL(3.0) License
 
 ### SYSTEM UI ARCHITECTURE
 
-<img src="https://user-images.githubusercontent.com/70680729/205292391-0bf67a78-10d4-413d-bd27-92a906aa9b9c.png"  width="80%"/>
+<img src="https://user-images.githubusercontent.com/70680729/206483693-c77472ed-8907-4a88-893c-2b416c73c37f.png"  width="80%"/>
 <br/></br>
+
 
 ## HOW TO RUN (On ubuntu)
 
