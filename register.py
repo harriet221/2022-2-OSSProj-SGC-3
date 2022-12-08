@@ -28,29 +28,25 @@ firebase = pyrebase.initialize_app(firebaseConfig)
 auth = firebase.auth()
 db = firestore.client()
 
-# Login
-
-
+# Login 함수
 def Login(email, password):
     global user
     user = email
-    print(user)
     login = 0
-    try:
-        login = auth.sign_in_with_email_and_password(email, password)
+    try: 
+        login = auth.sign_in_with_email_and_password(email, password) # 로그인 시도
         print("Successfully signed in!")
-    except:
+    except: # 로그인에 실패할 경우
         print("Invalid user or password. Try again")
     return login
 
 # register
-
-
 def register(email, password, confirmPassword):
     if password == confirmPassword:
         try:
-            auth.create_user_with_email_and_password(email, password)
-            data = {
+            auth.create_user_with_email_and_password(email, password) # 회원가입 시도
+            # 초기 데이터 셋팅
+            data = { 
                 "email": email,
                 "item_apply": "basic",
                 "item": ["basic"],
@@ -59,31 +55,11 @@ def register(email, password, confirmPassword):
             }
             db.collection("User").document(email).set(data)
             return 1
-        except:
+        except: # 이메일이 이미 존재하면 회원가입 불가
             print("Email already exists")
             return 0
 
 
-def passwordReset(email):
+def passwordReset(email): # 비밀번호 리셋 함수
     auth.send_password_reset_email(email)
 
-# Database
-# Create
-# data={'age':32,'address':'LA','emplyed':False,'name':"Mark"}
-# ref.update({'age':32,'address':'LA','emplyed':False,'name':"Mark"})
-#db.child("name").push({"company": "google"})
-
-
-# Update
-
-# doc_ref=db.collection("User").document("1234sdasd@gmail.com")
-# doc_ref.update({"number":123})
-# Delete
-# db.child("User").child("fjkds").child("age").remove()
-
-# people=db.child("people").get()
-# for person in people.each():
-#  print(person.val())
-#  print(person.key())
-#  if person.val()['name']=='Mark':
-#    db.child('people').child(person.key()).update({'name':'Jane'})
