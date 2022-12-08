@@ -7,7 +7,7 @@ from Defs import *
 
 def item_buy(user,item):
   
-  if coin_buy(user,item)!=0:
+  if coin_buy(user,item)!=0: 
     db.collection("User").document(user).update({"item":firestore.ArrayUnion([item])})
     print(pg.alert(text=Content.buy_msg.value, title=Content.buy_msgtitle.value))
   else:
@@ -33,13 +33,13 @@ def coin_get(user):
   return field["coin"]
 
 def coin_buy(user,item):
-  if coin_get(user)>Item.coin_10k.value and item=="bullets":
+  if coin_get(user)>=Item.coin_10k.value and item=="bullets":
     db.collection("User").document(user).update({"coin":firestore.Increment(-Item.coin_10k.value)})
-  elif coin_get(user)>Item.coin_50k.value and item=="missile":
+  elif coin_get(user)>=Item.coin_50k.value and item=="missile":
     db.collection("User").document(user).update({"coin":firestore.Increment(-Item.coin_50k.value)})
-  elif coin_get(user)>Item.coin_100k.value and item=="missile2":
+  elif coin_get(user)>=Item.coin_100k.value and item=="missile2":
     db.collection("User").document(user).update({"coin":firestore.Increment(-Item.coin_100k.value)})
-  elif coin_get(user)>Item.coin_1000k.value and item=="dagger":
+  elif coin_get(user)>=Item.coin_1000k.value and item=="dagger":
     db.collection("User").document(user).update({"coin":firestore.Increment(-Item.coin_1000k.value)})
   else:
     return 0
