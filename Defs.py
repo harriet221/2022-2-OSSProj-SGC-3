@@ -132,6 +132,8 @@ class Content(enum.Enum):
     givecoin_btn = "Give Coin as a gift"
     buy_btn = "Buy"
     apply_btn = 'Apply'
+    restart_btn = 'Restart'
+    main_btn = 'Main'
 
     # RANK page table title
     rank_rowname = ["RANK", "Email", "SCORE"]
@@ -210,12 +212,16 @@ class Content(enum.Enum):
 
     # GAME END page
     end = 'Game End'
+    score = 'Score: '
+    rank = 'Rank: '
+    coins = 'Total Coins: '
 
     # none
     none = ''
 
     # RANK page
     tb_rank = "rank"
+    
 
 
 class Item(enum.Enum):
