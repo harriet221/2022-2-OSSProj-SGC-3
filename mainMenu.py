@@ -269,7 +269,7 @@ def Buy_page():
     menu.clear()
     # 현재 코인 표시
     menu.add.label(Content.coin.value)
-    menu.add.label(dataLoad.coin_get(register.user))
+    menu.add.label(format(dataLoad.coin_get(register.user),','))
     menu.add.label(Content.item_category.value)
     item_list= Content.items.value
     buy_list = dataLoad.item_buyList_get(register.user) # 사용자가 구매한 아이템 리스트 가져옴
