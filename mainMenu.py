@@ -354,7 +354,7 @@ if __name__ == Content.main.value:
                 break
             if event.type == pygame.VIDEORESIZE:
                 # Update the surface
-                if event.w <= Display.minscreen_x.value and event.h <= Display.minscreen_y.value:
+                if event.w <= Display.minscreen_x.value or event.h <= Display.minscreen_y.value:
                     screen = pygame.display.set_mode((Display.minscreen_x.value, Display.minscreen_y.value),
                                                  pygame.RESIZABLE)
                 else:
