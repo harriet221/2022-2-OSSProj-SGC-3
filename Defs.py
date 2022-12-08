@@ -428,3 +428,8 @@ class Font(enum.Enum):
     color = 128, 128, 128
     e_color = 200, 200, 200
     margin = 10
+
+
+class Rank(enum.Enum):
+    rank_col = 0
+    email_col = 1

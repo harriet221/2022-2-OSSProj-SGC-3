@@ -36,8 +36,8 @@ def game_end():
     menu.add.label(Content.score.value+comma_score)
     rank_list=dataLoad.rankList_get()
     for rank in rank_list:
-        if rank[1]==user:
-            current_rank=str(rank[0])
+        if rank[Rank.email_col.value]==user:
+            current_rank=str(rank[Rank.rank_col.value])
     menu.add.label(Content.rank.value+current_rank)
     total_coin=dataLoad.coin_get(user)
     total_coin=str(format(total_coin,','))
