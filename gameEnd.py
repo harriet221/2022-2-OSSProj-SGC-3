@@ -13,7 +13,7 @@ pygame.init()
 infoObject = pygame.display.Info()
 size = [int(infoObject.current_w),int(infoObject.current_h)]
 screen = pygame.display.set_mode(size,pygame.RESIZABLE)
-pygame.display.set_caption(Content.main.value)
+pygame.display.set_caption(Content.gameend.value)
 
 # 창이 resize되었는지 여부 체크
 def on_resize() -> None:

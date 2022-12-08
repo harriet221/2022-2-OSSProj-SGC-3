@@ -110,6 +110,7 @@ class Content(enum.Enum):
     # captions
     gamename = 'Next Dimension'
     gameplay = 'Game Play'
+    gameend = 'Game End'
 
     # game weapon mode
     basic = 'basic'
