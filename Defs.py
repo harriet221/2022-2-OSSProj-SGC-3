@@ -253,7 +253,7 @@ class Display(enum.Enum):
     h_init = 8/9
     angle = 0
 
-    # 스크린 최소, 최대값
+    # 스크린 최소값
     minscreen_x = 400
     minscreen_y = 600
 
