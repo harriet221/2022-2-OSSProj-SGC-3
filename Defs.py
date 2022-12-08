@@ -132,6 +132,8 @@ class Content(enum.Enum):
     givecoin_btn = "Give Coin as a gift"
     buy_btn = "Buy"
     apply_btn = 'Apply'
+    restart_btn = 'Restart'
+    main_btn = 'Main'
 
     # RANK page table title
     rank_rowname = ["RANK", "Email", "SCORE"]
@@ -171,7 +173,6 @@ class Content(enum.Enum):
     error = 'Error'
     resetmsg = 'Please reset your password via email'
     reset = 'Reset'
-    default_email = 'seyeon0627@gmail.com'
     email_input = "email : "
     email = 'email'
     pw_input = "password : "
@@ -186,7 +187,9 @@ class Content(enum.Enum):
     item_category = 'Weapons'
     gift_info = "Enter an email to gift coins"
     giveok_msg = 'Coin gift is complete'
+    giveno_msg = 'You have less than you want to give.'
     giveok_msgtitle = 'Give Coin'
+    giveno_msgtitle = 'Failed'
     have_msg = 'This item has already been purchased'
     have_msgtitle = 'Already have'
     buy_msg='Purchase completed'
@@ -210,12 +213,16 @@ class Content(enum.Enum):
 
     # GAME END page
     end = 'Game End'
+    score = 'Score: '
+    rank = 'Rank: '
+    coins = 'Total Coins: '
 
     # none
     none = ''
 
     # RANK page
     tb_rank = "rank"
+    
 
 
 class Item(enum.Enum):

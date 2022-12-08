@@ -78,8 +78,11 @@ def resetPassword_Button(email):
 
 ## STORE: GIFT 코인 선물 함수
 def giveButton(friend_email,coin): 
-    dataLoad.coin_give(register.email,friend_email.get_value(),coin.get_value())
-    print(pg.alert(text=Content.giveok_msg.value, title=Content.giveok_msgtitle.value))
+    if int(coin.get_value()) > dataLoad.coin_get(register.user):
+        print(pg.alert(text=Content.giveno_msg.value, title=Content.giveno_msgtitle.value))
+    else:
+        dataLoad.coin_give(register.email,friend_email.get_value(),coin.get_value())
+        print(pg.alert(text=Content.giveok_msg.value, title=Content.giveok_msgtitle.value))
 
 
 ## STORE: BUY 아이템 구매 함수
@@ -243,8 +246,7 @@ def resetPassword():
 ## SIGN IN(로그인) 페이지
 def login():
     menu.clear()
-    # 개발시 편의를 위해 default값 추가함 (추후 삭제 예정)
-    email = menu.add.text_input(Content.email_input.value, id=Content.email.value, default=Content.default_email.value) # check
+    email = menu.add.text_input(Content.email_input.value, id=Content.email.value)
     password = menu.add.text_input(Content.pw_input.value, password=True, id=Content.pw.value)
     menu.add.button(Content.submit_btn.value, loginButton, email, password)  # submit 버튼을 누르면 로그인 시도
     menu.add.button(Content.reset_btn.value, resetPassword)
