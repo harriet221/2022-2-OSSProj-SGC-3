@@ -78,8 +78,11 @@ def resetPassword_Button(email):
 
 ## STORE: GIFT 코인 선물 함수
 def giveButton(friend_email,coin): 
-    dataLoad.coin_give(register.email,friend_email.get_value(),coin.get_value())
-    print(pg.alert(text=Content.giveok_msg.value, title=Content.giveok_msgtitle.value))
+    if int(coin.get_value()) > dataLoad.coin_get(register.user):
+        print(pg.alert(text=Content.giveno_msg.value, title=Content.giveno_msgtitle.value))
+    else:
+        dataLoad.coin_give(register.email,friend_email.get_value(),coin.get_value())
+        print(pg.alert(text=Content.giveok_msg.value, title=Content.giveok_msgtitle.value))
 
 
 ## STORE: BUY 아이템 구매 함수

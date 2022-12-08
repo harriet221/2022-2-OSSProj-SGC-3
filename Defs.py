@@ -188,7 +188,9 @@ class Content(enum.Enum):
     item_category = 'Weapons'
     gift_info = "Enter an email to gift coins"
     giveok_msg = 'Coin gift is complete'
+    giveno_msg = 'You have less than you want to give.'
     giveok_msgtitle = 'Give Coin'
+    giveno_msgtitle = 'Failed'
     have_msg = 'This item has already been purchased'
     have_msgtitle = 'Already have'
     buy_msg='Purchase completed'
