@@ -173,7 +173,6 @@ class Content(enum.Enum):
     error = 'Error'
     resetmsg = 'Please reset your password via email'
     reset = 'Reset'
-    default_email = 'seyeon0627@gmail.com'
     email_input = "email : "
     email = 'email'
     pw_input = "password : "

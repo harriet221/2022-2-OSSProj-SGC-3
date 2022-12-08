@@ -246,8 +246,7 @@ def resetPassword():
 ## SIGN IN(로그인) 페이지
 def login():
     menu.clear()
-    # 개발시 편의를 위해 default값 추가함 (추후 삭제 예정)
-    email = menu.add.text_input(Content.email_input.value, id=Content.email.value, default=Content.default_email.value) # check
+    email = menu.add.text_input(Content.email_input.value, id=Content.email.value)
     password = menu.add.text_input(Content.pw_input.value, password=True, id=Content.pw.value)
     menu.add.button(Content.submit_btn.value, loginButton, email, password)  # submit 버튼을 누르면 로그인 시도
     menu.add.button(Content.reset_btn.value, resetPassword)
