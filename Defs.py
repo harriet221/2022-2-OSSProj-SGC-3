@@ -168,7 +168,7 @@ class Content(enum.Enum):
     store_title = 'Store'
     category1 = 'Weapons'
     applied_item = "Current Applied item"
-    coin = "You Current coin"
+    coin = "Your Current coin"
     item_category = 'Weapons'
     gift_info = "Enter the email of the friend you want to give"
     giveok_msg = 'Coin gift is complete'
