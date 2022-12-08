@@ -287,29 +287,29 @@ def startGame(running_start):
             if shoot_frequency % freq_shoot == Frequency.fq_init.value:
                 bullet_sound.play()
                 player.shoot(bullet_img)
-            shoot_frequency += Utilization.one.value
+            shoot_frequency += 1
             if shoot_frequency >= freq_shoot:
                 shoot_frequency = Frequency.fq_init.value
 
         # set enemy planes
         if (enemy_frequency % freq_enemy1 == Frequency.fq_init.value) and (n < dim_end):
             enemy1_pos = [random.randint(
-                Utilization.zero.value, SCREEN_WIDTH - enemy1_rect[Utilization.x.value].width), Utilization.zero.value]
+                Utilization.edge.value, SCREEN_WIDTH - enemy1_rect[Utilization.x.value].width), Utilization.edge.value]
             enemy1 = Enemy(enemy1_img, Speed.enemy1.value,
                            enemy1_pos, enemy1_hp)
             enemies1.add(enemy1)
         elif (enemy_frequency % freq_enemy2 == Frequency.fq_init.value) and (n < dim_end):
             enemy2_pos = [random.randint(
-                Utilization.zero.value, SCREEN_WIDTH - enemy2_rect[Utilization.x.value].width), Utilization.zero.value]
+                Utilization.edge.value, SCREEN_WIDTH - enemy2_rect[Utilization.x.value].width), Utilization.edge.value]
             enemy2 = Enemy(enemy2_img, Speed.enemy2.value,
                            enemy2_pos, enemy2_hp)
             enemies2.add(enemy2)
-        enemy_frequency += Utilization.one.value
+        enemy_frequency += 1
 
         # move the bullet, and delete it
         for bullet in player.bullets:
             bullet.move()
-            if bullet.rect.bottom < Utilization.zero.value:
+            if bullet.rect.bottom < Utilization.edge.value:
                 player.bullets.remove(bullet)
 
         # move the enemy plane, and delete it
@@ -386,7 +386,7 @@ def startGame(running_start):
         enemies2_down = pygame.sprite.groupcollide(
             enemies2, player.bullets, False, True)
         for enemy_hit in enemies2_down:
-            enemy_hit.hp -= Utilization.one.value
+            enemy_hit.hp -= 1
             if enemy_hit.hp < enemy1_hp:
                 enemies2.remove(enemy_hit)
                 enemies1.add(enemy_hit)
@@ -394,7 +394,7 @@ def startGame(running_start):
         # set coins
         if enemies1_down:
             coin_pos = [random.randint(
-                Utilization.zero.value, SCREEN_WIDTH - coin_rect.width), Utilization.zero.value]
+                Utilization.edge.value, SCREEN_WIDTH - coin_rect.width), Utilization.edge.value]
             coin = Coin(coin_img, shine_imgs, coin_pos)
             coins.add(coin)
 
@@ -406,17 +406,17 @@ def startGame(running_start):
                 star_sound.play()
                 star = Star(star_img, spin_imgs, type)
                 stars.add(star)
-            random1_frequency += Utilization.one.value
+            random1_frequency += 1
 
         # set meteors
         if (not player.is_hit) and (n < dim_end):
             if random2_frequency % meteor_frequency == Frequency.fq_init.value:
                 meteor_sound.play()
                 meteor_pos = [random.randint(
-                    Utilization.zero.value, SCREEN_WIDTH - meteor_rect.width), Utilization.zero.value]
+                    Utilization.edge.value, SCREEN_WIDTH - meteor_rect.width), Utilization.edge.value]
                 meteor = Meteor(meteor_img, meteor_pos)
                 meteors.add(meteor)
-            random2_frequency += Utilization.one.value
+            random2_frequency += 1
 
         # draw background
         SCREEN.fill(0)
@@ -468,7 +468,7 @@ def startGame(running_start):
             if ending == False:
                 SCREEN.blit(background[BackGround.ending.value],
                             (bg_widths, bg_heights[Dimension.dim11.value]))
-                bg_heights[Dimension.dim11.value] += Utilization.one.value
+                bg_heights[Dimension.dim11.value] += 1
                 ending_font = pygame.font.Font(None, Font.e_size.value)
                 ending_text1 = ending_font.render(
                     Game.end_message1.value, True, Font.e_color.value)
@@ -491,7 +491,7 @@ def startGame(running_start):
             elif ending == True:
                 SCREEN.blit(background[BackGround.s_ending.value],
                             (bg_widths, bg_heights[Dimension.dim11.value]))
-                bg_heights[Dimension.dim11.value] += Utilization.one.value
+                bg_heights[Dimension.dim11.value] += 1
                 ending_font = pygame.font.Font(None, Font.e_size.value)
                 ending_text1 = ending_font.render(
                     Game.close_message1.value, True, Font.e_color.value)
@@ -515,7 +515,7 @@ def startGame(running_start):
             # Change the picture index to plane's animation effect
             player.img_index = player_down_index // Divide.player_d.value
             SCREEN.blit(player.image[player.img_index], player.rect)
-            player_down_index += Utilization.one.value
+            player_down_index += 1
             if player_down_index > Divide.player_i.value:
                 running = False
         # 화면 비율 축소시 플레이어 위치 화면 안으로 자동 조절
@@ -581,7 +581,7 @@ def startGame(running_start):
                 enemies1, bombs, True, False)
             pygame.sprite.groupcollide(
                 enemies2, bombs, True, False)
-            if bombs1.rect.bottom < Utilization.zero.value:
+            if bombs1.rect.bottom < Utilization.edge.value:
                 bombs.remove(bombs1)
 
         # draw meteor animation
