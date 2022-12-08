@@ -11,7 +11,7 @@ def item_buy(user,item):
     db.collection("User").document(user).update({"item":firestore.ArrayUnion([item])})
     print(pg.alert(text=Content.buy_msg.value, title=Content.buy_msgtitle.value))
   else:
-    print(pg.alert(text=Content.cannotBuy_msg.value, title=Content.have_msgtitle.value))
+    print(pg.alert(text=Content.cannotBuy_msg.value, title=Content.cannotBuy_msgtitle.value))
 
 def item_buyList_get(user):
   itemList=db.collection("User").document(user).get().to_dict()
