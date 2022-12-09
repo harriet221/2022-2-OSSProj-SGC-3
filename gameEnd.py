@@ -13,7 +13,7 @@ pygame.init()
 infoObject = pygame.display.Info()
 size = [int(infoObject.current_w),int(infoObject.current_h)]
 screen = pygame.display.set_mode(size,pygame.RESIZABLE)
-pygame.display.set_caption(Content.main.value)
+pygame.display.set_caption(Content.gameend.value)
 
 # 창이 resize되었는지 여부 체크
 def on_resize() -> None:
@@ -36,8 +36,8 @@ def game_end():
     menu.add.label(Content.score.value+comma_score)
     rank_list=dataLoad.rankList_get()
     for rank in rank_list:
-        if rank[1]==user:
-            current_rank=str(rank[0])
+        if rank[Rank.email_col.value]==user:
+            current_rank=str(rank[Rank.rank_col.value])
     menu.add.label(Content.rank.value+current_rank)
     total_coin=dataLoad.coin_get(user)
     total_coin=str(format(total_coin,','))
@@ -78,7 +78,7 @@ while True:
             break
         if event.type == pygame.VIDEORESIZE:
             # Update the surface
-            if event.w <= Display.minscreen_x.value and event.h <= Display.minscreen_y.value:
+            if event.w <= Display.minscreen_x.value or event.h <= Display.minscreen_y.value:
                 screen = pygame.display.set_mode((Display.minscreen_x.value, Display.minscreen_y.value),
                                                 pygame.RESIZABLE)
             else:

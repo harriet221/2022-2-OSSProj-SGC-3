@@ -110,6 +110,7 @@ class Content(enum.Enum):
     # captions
     gamename = 'Next Dimension'
     gameplay = 'Game Play'
+    gameend = 'Game End'
 
     # game weapon mode
     basic = 'basic'
@@ -159,7 +160,7 @@ class Content(enum.Enum):
     basecode1 = 'Kill-Console/PythonShootGame(The GPL License)'
     basecode2 = 'CSID-DGU/2021-2-OSSProj-PlusAlpha-9(The MIT License)'
     imagesource = 'pixabay'
-    soundesource = 'soundeffectplus'
+    soundesource = 'envato elements'
     creators = '\nCreated by\n'\
         'Dongguk University OSSProj\n'\
         'Seojeong Yun, Gaeun Lee, Seyeon Park'
@@ -182,18 +183,18 @@ class Content(enum.Enum):
     # STORE page
     store_title = 'Store'
     category1 = 'Weapons'
-    applied_item = "Current Applied item"
-    coin = "Your Current coin"
+    applied_item = "Current Applied Item"
+    coin = "Your Current Coin"
     item_category = 'Weapons'
     gift_info = "Enter an email to gift coins"
-    giveok_msg = 'Coin gift is complete'
+    giveok_msg = 'Coin gift completed'
     giveno_msg = 'You have less than you want to give.'
-    giveok_msgtitle = 'Give Coin'
+    giveok_msgtitle = 'Success'
     giveno_msgtitle = 'Failed'
     have_msg = 'This item has already been purchased'
-    have_msgtitle = 'Already have'
+    have_msgtitle = 'Already Have'
     buy_msg='Purchase completed'
-    buy_msgtitle='Buy item'
+    buy_msgtitle='Buy Item'
     cannotBuy_msg="Item cannot be purchased due to insufficient coins"
     cannotBuy_msgtitle="Unable to purchase"
 
@@ -252,7 +253,7 @@ class Display(enum.Enum):
     h_init = 8/9
     angle = 0
 
-    # 스크린 최소, 최대값
+    # 스크린 최소값
     minscreen_x = 400
     minscreen_y = 600
 
@@ -428,3 +429,8 @@ class Font(enum.Enum):
     color = 128, 128, 128
     e_color = 200, 200, 200
     margin = 10
+
+
+class Rank(enum.Enum):
+    rank_col = 0
+    email_col = 1
