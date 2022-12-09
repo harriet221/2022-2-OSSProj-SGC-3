@@ -510,13 +510,13 @@ def startGame(running_start):
 
         # draw player plane
         if not player.is_hit:
-            SCREEN.blit(player.image[player.img_index], player.rect)
+            SCREEN.blit(player.image[0], player.rect)
         else:
             # Change the picture index to plane's animation effect
-            player.img_index = player_down_index // Divide.player_d.value
+            player.img_index = player_down_index // Divide.player_i.value
             SCREEN.blit(player.image[player.img_index], player.rect)
             player_down_index += 1
-            if player_down_index > Divide.player_i.value:
+            if player_down_index > Divide.player_d.value:
                 running = False
         # 화면 비율 축소시 플레이어 위치 화면 안으로 자동 조절
         if player.rect.left >= SCREEN_WIDTH - player.rect.width:
@@ -595,7 +595,7 @@ def startGame(running_start):
                 meteors.remove(meteor)
 
         # draw bullets and enemy planes and coins
-        player.bullets.draw(SCREEN)  # background moving
+        player.bullets.draw(SCREEN)
         enemies1.draw(SCREEN)
         enemies2.draw(SCREEN)
         coins.draw(SCREEN)
@@ -612,7 +612,7 @@ def startGame(running_start):
         text_rect.topleft = [Font.margin.value, Font.margin.value]
         SCREEN.blit(score_text, text_rect)
 
-        # draw way
+        # draw way (the distance player've been through)
         way = int(km)
         way_font = pygame.font.Font(None, Font.size.value)
         way_text = way_font.render(str(way)+"ly", True, Font.color.value)

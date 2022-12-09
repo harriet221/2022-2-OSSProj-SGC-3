@@ -34,7 +34,7 @@ class Images(enum.Enum):
 
     # game logo
     logo = 'resource/image/logo-silver.png'
-    
+
     # HELP page 키 설명
     key_left = 'resource/image/arrowkey_left.png'
     key_right = 'resource/image/arrowkey_right.png'
@@ -60,27 +60,27 @@ class Images(enum.Enum):
     star7 = 'resource/image/star7.png'
 
     # 차원별 enemies
-    ## chess
+    # chess
     black_knight = 'resource/image/chess_black_knight.png'
     white_king = 'resource/image/chess_white_king.png'
 
-    ## green
+    # green
     bat = 'resource/image/green_bat.png'
     lizard = 'resource/image/green_lizard.png'
 
-    ## pirate
+    # pirate
     pirate_ship = 'resource/image/pirate_ship.png'
     kraken = 'resource/image/pirate_kraken.png'
 
-    ## card
+    # card
     card_jack = 'resource/image/card_jack.png'
     card_queen = 'resource/image/card_queen.png'
 
-    ## desert
+    # desert
     snake = 'resource/image/desert_snake.png'
     desert_scolpion = 'resource/image/desert_scolpion.png'
 
-    ## meteor
+    # meteor
     meteor = 'resource/image/meteorite.png'
 
     # weapons
@@ -90,16 +90,16 @@ class Images(enum.Enum):
     bomb_256 = 'resource/image/bomb_256px.png'
 
     # modes
-    ## blind mode
+    # blind mode
     blind = 'resource/image/blind_mode.png'
 
-    ## bomb mode
+    # bomb mode
     bomb = 'resource/image/bomb.png'
 
-    ## mirror mode
+    # mirror mode
     mirror = 'resource/image/mirror_mode.png'
 
-    ## double mode
+    # double mode
     double = 'resource/image/double.png'
 
 
@@ -193,10 +193,10 @@ class Content(enum.Enum):
     giveno_msgtitle = 'Failed'
     have_msg = 'This item has already been purchased'
     have_msgtitle = 'Already Have'
-    buy_msg='Purchase completed'
-    buy_msgtitle='Buy Item'
-    cannotBuy_msg="Item cannot be purchased due to insufficient coins"
-    cannotBuy_msgtitle="Unable to purchase"
+    buy_msg = 'Purchase completed'
+    buy_msgtitle = 'Buy Item'
+    cannotBuy_msg = "Item cannot be purchased due to insufficient coins"
+    cannotBuy_msgtitle = "Unable to purchase"
 
     # BUY page
     items = ["bullets", "missile", "missile2", "dagger"]
@@ -223,7 +223,6 @@ class Content(enum.Enum):
 
     # RANK page
     tb_rank = "rank"
-    
 
 
 class Item(enum.Enum):
@@ -378,8 +377,8 @@ class Resize(enum.Enum):
     shoot = 1
     enemy1 = 9
     enemy2 = 10
-    # resizable에 따른 변화
-    #  0  500 1000 1500 2000 이상
+    # resizable에 따른 변화 - 빈도는 숫자에 반비례, 속도는 숫자에 비례
+    #  0  500 1000 1500 2000 이상 - 화면 크기 기준
     #  8   9   10   11   12  플레이어 속도
     # 10   9    8    7    6  총알 발사 빈도
     # 90   81  72   63   54  적1 출현 빈도
@@ -401,26 +400,31 @@ class Game(enum.Enum):
 
 
 class Plane(enum.Enum):
+    # plane image rect
     p1 = 0, 99, 102, 126
     p2 = 165, 360, 102, 126
     p3 = 165, 234, 102, 126
     p4 = 330, 624, 102, 126
     p5 = 330, 498, 102, 126
     p6 = 432, 624, 102, 126
+    # bullet image rect
     bullet = 1004, 987, 9, 21
+    # enemy(space) image rect
     e1 = 534, 612, 57, 43
     e2 = 267, 347, 57, 43
 
 
 class Divide(enum.Enum):
-    player = 16
-    player_d = 8
-    player_i = 47
-    coin = 240
-    coin_i = 40
-    star_r = 70
+    # mainGame.py 참조
+    player = 8     # 나눠지는 숫자 - 이미지가 n에 맞게 +1 씩 바뀌면 너무 빨리 변해서 조절하는 용도
+    player_i = 8   # 나누는 숫자 (ex/ 이미지 1~5번 전환 => k=8; num=k//8; 이미지[num]; k+=1;)
+    player_d = 47  # palyer hit 이미지 한계 (이미지개수*조절수i - 1)
+    # gameRole.py 참조
+    coin = 240   # 객체의 화면상 위치 % 값 => ex/ 0~239의 정수 반복
+    coin_i = 40  # 위 결과값 // 값 => ex/ 000...111...222...333...444...555 반복
     star = 210
     star_i = 30
+    star_r = 70  # 랜덤박스(star) 위치 조절 (화면 높이&너비의 1/70씩 이동)
 
 
 class Font(enum.Enum):

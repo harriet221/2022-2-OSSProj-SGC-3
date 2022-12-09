@@ -128,13 +128,6 @@ The GPL(3.0) License
 친구의 이메일과 얼만큼 줄 건지 코인의 양을 입력하면 선물할 수 있어요
 <br>
 <br>
-<br>
-
-### SYSTEM UI ARCHITECTURE
-
-<img src="https://user-images.githubusercontent.com/70680729/206483693-c77472ed-8907-4a88-893c-2b416c73c37f.png"  width="80%"/>
-<br/></br>
-
 
 ## HOW TO RUN (On ubuntu)
 
@@ -163,6 +156,29 @@ pip install -r requirements.txt
 ```powershell
 python3 mainMenu.py
 ```
+
+<br/></br>
+
+## STRUCTURE
+
+### SYSTEM UI ARCHITECTURE
+
+<img src="https://user-images.githubusercontent.com/70680729/206483693-c77472ed-8907-4a88-893c-2b416c73c37f.png"  width="80%"/>
+
+### Files
+| source file       | role |
+| :--------------:  | :--------------: |
+| resource/    | 이미지 / 사운드 소스 폴더|
+| Defs.py      | 상수 모음|
+| mainMenu.py  | 메뉴 및 각 페이지|
+| button.py    | 각 페이지 버튼|
+| mainGame.py  | 게임 플레이 코드|
+| gameRole.py  | 게임 객체 관련 클래스 모음|
+| dataLoad.py  | 다른 페이지에 반영되는 게임 요소|
+| gameEnd.py   | 게임 엔드 페이지|
+| register.py  | 로그인|
+| shooting...json  | 로그인용 firebase 키|
+| requirements.txt | 설치용 모듈 버젼 모음|
 
 <br/></br>
 
