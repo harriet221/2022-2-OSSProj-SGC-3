@@ -595,7 +595,7 @@ def startGame(running_start):
                 meteors.remove(meteor)
 
         # draw bullets and enemy planes and coins
-        player.bullets.draw(SCREEN)  # background moving
+        player.bullets.draw(SCREEN)
         enemies1.draw(SCREEN)
         enemies2.draw(SCREEN)
         coins.draw(SCREEN)
@@ -612,7 +612,7 @@ def startGame(running_start):
         text_rect.topleft = [Font.margin.value, Font.margin.value]
         SCREEN.blit(score_text, text_rect)
 
-        # draw way
+        # draw way (the distance player've been through)
         way = int(km)
         way_font = pygame.font.Font(None, Font.size.value)
         way_text = way_font.render(str(way)+"ly", True, Font.color.value)
