@@ -510,13 +510,13 @@ def startGame(running_start):
 
         # draw player plane
         if not player.is_hit:
-            SCREEN.blit(player.image[player.img_index], player.rect)
+            SCREEN.blit(player.image[0], player.rect)
         else:
             # Change the picture index to plane's animation effect
-            player.img_index = player_down_index // Divide.player_d.value
+            player.img_index = player_down_index // Divide.player_i.value
             SCREEN.blit(player.image[player.img_index], player.rect)
             player_down_index += 1
-            if player_down_index > Divide.player_i.value:
+            if player_down_index > Divide.player_d.value:
                 running = False
         # 화면 비율 축소시 플레이어 위치 화면 안으로 자동 조절
         if player.rect.left >= SCREEN_WIDTH - player.rect.width:
