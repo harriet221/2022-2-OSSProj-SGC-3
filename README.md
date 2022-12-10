@@ -108,7 +108,7 @@ The GPL(3.0) License
 
 <b>상점메뉴에는 아이템을 구입하고 적용하거나, 친구에게 코인을 선물할 수 있는 기능이 있어요</b><br>
 코인을 모아 상점의 아이템을 구매하고 친구에게 선물해보세요<br>
-<img src="https://user-images.githubusercontent.com/70680729/205294513-0310ccad-d9fe-4888-abe4-6f799ffa34c9.png"  width="80%"/>
+<img src="https://user-images.githubusercontent.com/92314556/206863249-4283393a-23be-4dbe-9ac1-ef7ea7d1e85e.png"  width="80%"/>
 
 #### 1️⃣ Buy Items
 
@@ -166,19 +166,20 @@ python3 mainMenu.py
 <img src="https://user-images.githubusercontent.com/70680729/206483693-c77472ed-8907-4a88-893c-2b416c73c37f.png"  width="80%"/>
 
 ### Files
-| source file       | role |
-| :--------------:  | :--------------: |
-| resource/    | 이미지 / 사운드 소스 폴더|
-| Defs.py      | 상수 모음|
-| mainMenu.py  | 메뉴 및 각 페이지|
-| button.py    | 각 페이지 버튼|
-| mainGame.py  | 게임 플레이 코드|
-| gameRole.py  | 게임 객체 관련 클래스 모음|
-| dataLoad.py  | 다른 페이지에 반영되는 게임 요소|
-| gameEnd.py   | 게임 엔드 페이지|
-| register.py  | 로그인|
-| shooting...json  | 로그인용 firebase 키|
-| requirements.txt | 설치용 모듈 버젼 모음|
+
+|   source file    |               role               |
+| :--------------: | :------------------------------: |
+|    resource/     |    이미지 / 사운드 소스 폴더     |
+|     Defs.py      |            상수 모음             |
+|   mainMenu.py    |        메뉴 및 각 페이지         |
+|    button.py     |          각 페이지 버튼          |
+|   mainGame.py    |         게임 플레이 코드         |
+|   gameRole.py    |    게임 객체 관련 클래스 모음    |
+|   dataLoad.py    | 다른 페이지에 반영되는 게임 요소 |
+|    gameEnd.py    |         게임 엔드 페이지         |
+|   register.py    |              로그인              |
+| shooting...json  |       로그인용 firebase 키       |
+| requirements.txt |      설치용 모듈 버젼 모음       |
 
 <br/></br>
 
