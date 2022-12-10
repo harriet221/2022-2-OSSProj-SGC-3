@@ -28,24 +28,22 @@ score = mainGame.total_score
 def game_end():
     menu.clear()
     menu.add.label(Content.end.value, font_size=Display.title_fontsize.value, padding=Display.padding_large.value)
-    # DB에 코인 저장 기능
-    dataLoad.coin_set(user,score)
-    dataLoad.rank(user,score)
-    comma_score = str(format(score,','))
-    print(comma_score)
+    dataLoad.coin_set(user,score) # DB에 코인 저장 기능
+    dataLoad.rank(user,score) # 신기록 갱신시 DB에 저장
+    comma_score = str(format(score,',')) # 숫자에 , 추가
     menu.add.label(Content.score.value+comma_score)
-    rank_list=dataLoad.rankList_get()
-    for rank in rank_list:
-        if rank[Rank.email_col.value]==user:
+    rank_list=dataLoad.rankList_get() # 랭킹 리스트 가져오기
+    for rank in rank_list: # 현재 유저 랭킹 표시
+        if rank[Rank.email_col.value]==user: 
             current_rank=str(rank[Rank.rank_col.value])
     menu.add.label(Content.rank.value+current_rank)
-    total_coin=dataLoad.coin_get(user)
+    total_coin=dataLoad.coin_get(user) # 전체 코인량 가져오기
     total_coin=str(format(total_coin,','))
-    menu.add.label(Content.coins.value+total_coin)
+    menu.add.label(Content.coins.value+total_coin) # 전체 코인량 표시 
     menu.add.vertical_margin(Display.small_margin.value)
-    menu.add.button(Content.restart_btn.value,start_the_game)
-    menu.add.button(Content.main_btn.value,start_the_mainMenu)
-    menu.add.button(Content.quit_btn.value,pygame_menu.events.EXIT)
+    menu.add.button(Content.restart_btn.value,start_the_game) # 게임 재시작
+    menu.add.button(Content.main_btn.value,start_the_mainMenu) # 메인 메뉴로 돌아가기 
+    menu.add.button(Content.quit_btn.value,pygame_menu.events.EXIT) # 게임 종료
 
 def start_the_game():
     from mainGame import startGame
