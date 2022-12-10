@@ -33,13 +33,13 @@ def coin_get(user): # 사용자가 현재 보유한 코인량 가져오기
   return field["coin"]
 
 def coin_buy(user,item): # 사용자가 보유한 코인량이 사용자가 구매하고자 하는 아이템의 가격보다 많은지 체크  
-  if coin_get(user)>=Item.coin_10k.value and item=="bullets":
+  if coin_get(user)>=Item.bullets_price.value and item=="bullets":
     db.collection("User").document(user).update({"coin":firestore.Increment(-Item.bullets_price.value)})
-  elif coin_get(user)>=Item.coin_50k.value and item=="missile":
+  elif coin_get(user)>=Item.missile_price.value and item=="missile":
     db.collection("User").document(user).update({"coin":firestore.Increment(-Item.missile_price.value)})
-  elif coin_get(user)>=Item.coin_100k.value and item=="missile2":
+  elif coin_get(user)>=Item.missile2_price.value and item=="missile2":
     db.collection("User").document(user).update({"coin":firestore.Increment(-Item.missile2_price.value)})
-  elif coin_get(user)>=Item.coin_1000k.value and item=="dagger":
+  elif coin_get(user)>=Item.dagger_price.value and item=="dagger":
     db.collection("User").document(user).update({"coin":firestore.Increment(-Item.dagger_price.value)})
   else: # 아닐경우 0을 리턴
     return 0 
