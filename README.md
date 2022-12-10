@@ -167,19 +167,19 @@ python3 mainMenu.py
 
 ### Files
 
-|   source file    |               role               |
-| :--------------: | :------------------------------: |
-|    resource/     |    이미지 / 사운드 소스 폴더     |
-|     Defs.py      |            상수 모음             |
-|   mainMenu.py    |        메뉴 및 각 페이지         |
-|    button.py     |          각 페이지 버튼          |
-|   mainGame.py    |         게임 플레이 코드         |
-|   gameRole.py    |    게임 객체 관련 클래스 모음    |
-|   dataLoad.py    | 다른 페이지에 반영되는 게임 요소 |
-|    gameEnd.py    |         게임 엔드 페이지         |
-|   register.py    |              로그인              |
-| shooting...json  |       로그인용 firebase 키       |
-| requirements.txt |      설치용 모듈 버젼 모음       |
+|   source file    |                 role                 |
+| :--------------: | :----------------------------------: |
+|    resource/     |      이미지 / 사운드 소스 폴더       |
+|     Defs.py      |              상수 모음               |
+|   mainMenu.py    |          메뉴 및 각 페이지           |
+|    button.py     |            각 페이지 버튼            |
+|   mainGame.py    |           게임 플레이 코드           |
+|   gameRole.py    |      게임 객체 관련 클래스 모음      |
+|   dataLoad.py    | DB 데이터 저장 및 불러오기 함수 모음 |
+|    gameEnd.py    |           게임 엔드 페이지           |
+|   register.py    |  회원가입, 로그인, 비밀번호 재설정   |
+| shooting...json  |         firebase DB 접근 키          |
+| requirements.txt |        설치용 모듈 버젼 모음         |
 
 <br/></br>
 
