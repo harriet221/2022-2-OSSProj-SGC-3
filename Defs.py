@@ -227,10 +227,10 @@ class Content(enum.Enum):
 
 class Item(enum.Enum):
     # 아이템 가격 coin
-    coin_10k = 10000
-    coin_50k = 50000
-    coin_100k = 100000
-    coin_1000k = 1000000
+    bullets_price = 10000
+    missile_price = 50000
+    missile2_price = 100000
+    dagger_price = 1000000
 
 
 class Url(enum.Enum):

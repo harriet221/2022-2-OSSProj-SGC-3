@@ -5,9 +5,11 @@ import pyrebase
 import pygame_menu
 import pygame
 
+# firestore 접근키
 cred = credentials.Certificate(
     "./shootinggame-adf10-firebase-adminsdk-mb0cr-86331adc29.json")
 
+# pyrebase authentication을 위한 접근키
 firebaseConfig = {
     'apiKey': "AIzaSyCTG8WWk89CaPfUPwjNPObOce13gDC-Uro",
     'authDomain': "shootinggame-adf10.firebaseapp.com",
@@ -30,7 +32,7 @@ db = firestore.client()
 
 # Login 함수
 def Login(email, password):
-    global user
+    global user # 현재 로그인 유지를 위한 변수
     user = email
     login = 0
     try: 
