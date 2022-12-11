@@ -506,7 +506,8 @@ def startGame(running_start):
                 SCREEN.blit(ending_text1, text_rect1)
                 SCREEN.blit(ending_text2, text_rect2)
             if n > dim_end + Game.end.value:
-                player.is_hit = True
+                # player.is_hit = True
+                running = False
 
         # draw player plane
         if not player.is_hit:
