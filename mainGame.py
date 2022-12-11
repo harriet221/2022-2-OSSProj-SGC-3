@@ -506,7 +506,8 @@ def startGame(running_start):
                 SCREEN.blit(ending_text1, text_rect1)
                 SCREEN.blit(ending_text2, text_rect2)
             if n > dim_end + Game.end.value:
-                player.is_hit = True
+                # player.is_hit = True
+                running = False
 
         # draw player plane
         if not player.is_hit:
@@ -600,10 +601,10 @@ def startGame(running_start):
         enemies2.draw(SCREEN)
         coins.draw(SCREEN)
         stars.draw(SCREEN)
-        blinds.draw(SCREEN)
-        bombs.draw(SCREEN)
-        modes.draw(SCREEN)
         meteors.draw(SCREEN)
+        bombs.draw(SCREEN)
+        blinds.draw(SCREEN)
+        modes.draw(SCREEN)
 
         # draw score
         score_font = pygame.font.Font(None, Font.size.value)

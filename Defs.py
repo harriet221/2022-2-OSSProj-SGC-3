@@ -400,6 +400,7 @@ class Game(enum.Enum):
 
 
 class Plane(enum.Enum):
+    # shoot.png에서 해당 이미지의 위치 (x, y, width, height)
     # plane image rect
     p1 = 0, 99, 102, 126
     p2 = 165, 360, 102, 126
