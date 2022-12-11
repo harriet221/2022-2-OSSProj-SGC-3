@@ -601,10 +601,10 @@ def startGame(running_start):
         enemies2.draw(SCREEN)
         coins.draw(SCREEN)
         stars.draw(SCREEN)
-        blinds.draw(SCREEN)
-        bombs.draw(SCREEN)
-        modes.draw(SCREEN)
         meteors.draw(SCREEN)
+        bombs.draw(SCREEN)
+        blinds.draw(SCREEN)
+        modes.draw(SCREEN)
 
         # draw score
         score_font = pygame.font.Font(None, Font.size.value)
