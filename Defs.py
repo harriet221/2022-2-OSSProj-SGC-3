@@ -328,10 +328,10 @@ class Frequency(enum.Enum):
     # shoot frequency
     fq_init = 0
     random1_fq_min = 1
-    random1_fq_max = 30
+    random1_fq_max = 40
 
-    random2_fq_min = 10
-    random2_fq_max = 50
+    random2_fq_min = 15
+    random2_fq_max = 60
 
     fq_medium = 1000
     fq_low = 3000
@@ -344,9 +344,9 @@ class Speed(enum.Enum):
     bg = 4
     zero = 0
     bullet = 10
-    player = 8
-    enemy1 = 2
-    enemy2 = 1.7
+    player = 9
+    enemy1 = 2.1
+    enemy2 = 1.8
     coin = 10
     blind = 5
     bomb = 20
@@ -379,7 +379,7 @@ class Resize(enum.Enum):
     enemy2 = 10
     # resizable에 따른 변화 - 빈도는 숫자에 반비례, 속도는 숫자에 비례
     #  0  500 1000 1500 2000 이상 - 화면 크기 기준
-    #  8   9   10   11   12  플레이어 속도
+    #  9   10  11   12   13  플레이어 속도
     # 10   9    8    7    6  총알 발사 빈도
     # 90   81  72   63   54  적1 출현 빈도
     # 100  90  80   70   60  적2 출현 빈도
