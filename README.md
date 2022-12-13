@@ -179,7 +179,6 @@ python3 mainMenu.py
 |    resource/     |      이미지 / 사운드 소스 폴더       |
 |     Defs.py      |              상수 모음               |
 |   mainMenu.py    |          메뉴 및 각 페이지           |
-|    button.py     |            각 페이지 버튼            |
 |   mainGame.py    |           게임 플레이 코드           |
 |   gameRole.py    |      게임 객체 관련 클래스 모음      |
 |   dataLoad.py    | DB 데이터 저장 및 불러오기 함수 모음 |
