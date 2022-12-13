@@ -129,13 +129,15 @@ The GPL(3.0) License
 <br>
 <br>
 
-## HOW TO RUN (On ubuntu)
+## HOW TO RUN (on Ubuntu 20.04)
 
-1. python3 설치
+1. python3 설치되어 있다고 가정, 기본 준비
 
 ```powershell
-sudo apt-get update
-sudo apt install python3
+sudo apt-get update  # 업데이트
+python3 -V  # 버전확인, 미설치 시 sudo apt install -y python3 진행
+sudo apt-get install -y python3-pip  # pip3 설치
+sudo apt-get install -y python3-tk python3-dev  # 기본 세팅
 ```
 
 2. 저장소 클론 및 폴더 이동
@@ -148,7 +150,12 @@ cd 2022-2-OSSProj-SGC-3
 3. 필요 모듈 설치
 
 ```powershell
-pip install -r requirements.txt
+pip3 install pygame==2.1.2
+pip3 install pygame_menu==4.2.8
+pip3 install pyrebase4==4.5.0
+pip3 install firebase_admin==6.0.1
+pip3 install pyautogui==0.9.53
+# 한 번에 하려면 pip3 install -r requirements.txt 실행
 ```
 
 4. 게임 실행
