@@ -96,7 +96,7 @@ def startGame(running_start):
         bullet_rect = pygame.Rect(Plane.bullet.value)
         bullet_img = plane_img.subsurface(bullet_rect)
     else:
-        if weapon == Content.items.value[3]:
+        if weapon == Content.items.value[-1]:  # last item == special item
             ending = True
         image_path = Content.img_path.value + weapon + Content.img_size16.value
         bullet_img = pygame.image.load(image_path).convert_alpha()
