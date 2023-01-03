@@ -27,7 +27,7 @@ The GPL(3.0) License
 |                 게임플레이                  |                프론트엔드                 |                  백엔드                   |
 |                 철학과 (18)                 |             경영정보학과 (18)             |           산업시스템공학과 (20)           |
 | [harriet221](https://github.com/harriet221) | [irina0627](https://github.com/irina0627) | [gaeun5744](https://github.com/gaeun5744) |
-|             tjwjdtree@naver.com             |           seyeon0627@gmail.com            |            geun5744@gmail.com             |
+|             tjwjdtree@gmail.com             |           seyeon0627@gmail.com            |            geun5744@gmail.com             |
 
 <br/><br/>
 
