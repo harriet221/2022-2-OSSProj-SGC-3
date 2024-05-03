@@ -185,7 +185,6 @@ python3 mainMenu.py
 |   dataLoad.py    | DB 데이터 저장 및 불러오기 함수 모음 |
 |    gameEnd.py    |           게임 엔드 페이지           |
 |   register.py    |  회원가입, 로그인, 비밀번호 재설정   |
-| shooting...json  |         firebase DB 접근 키          |
 | requirements.txt |        설치용 모듈 버젼 모음         |
 
 <br/></br>
