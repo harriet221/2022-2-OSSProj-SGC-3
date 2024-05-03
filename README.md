@@ -144,8 +144,8 @@ sudo apt-get install -y python3-tk python3-dev  # 기본 세팅
 2. 저장소 클론 및 폴더 이동
 
 ```powershell
-git clone https://github.com/CSID-DGU/2022-2-OSSProj-SGC-3.git
-cd 2022-2-OSSProj-SGC-3
+git clone https://github.com/harriet221/Next-Dimension_teamSGC.git
+cd Next-Dimension_teamSGC
 ```
 
 3. 필요 모듈 설치
